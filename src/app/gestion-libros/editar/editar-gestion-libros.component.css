@@ -1,0 +1,80 @@
+.table {
+    margin-top: 20px;
+    border-radius: 0.25rem; /* Bordes redondeados */
+    overflow: hidden; /* Esconde los bordes */
+    background-color: white; /* Fondo blanco para la tabla */
+}
+
+.table th, .table td {
+    text-align: center;
+    padding: 10px 15px; /* Espaciado interno ajustado */
+    vertical-align: middle; /* Alineación vertical */
+}
+
+.table th {
+    background-color: #d9534f; /* Color rojo para el encabezado */
+    color: white; /* Color de texto del encabezado */
+    font-weight: bold; /* Negrita para el encabezado */
+    border-bottom: 2px solid #dee2e6; /* Línea de separación más clara */
+}
+
+.table tbody tr {
+    transition: background-color 0.3s ease; /* Transición suave para el fondo */
+}
+
+.table tbody tr:hover {
+    background-color: #e3f2fd; /* Color de fondo ligero al pasar el mouse */
+}
+
+.table tbody tr:nth-child(odd) {
+    background-color: #f9f9f9; /* Color de fondo para filas impares */
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #ffffff; /* Color de fondo para filas pares */
+}
+
+.table td {
+    border: 1px solid #dee2e6; /* Borde sutil para las celdas */
+}
+
+.table td:last-child {
+    border-right: none; /* Eliminar borde derecho de la última celda */
+}
+
+.table th:first-child, .table td:first-child {
+    border-left: none; /* Eliminar borde izquierdo de la primera celda */
+}
+
+html, body {
+    height: 100%;
+    margin: 0; /* Elimina el margen predeterminado */
+}
+
+.container-fluid {
+    height: 100%; /* Asegúrate de que el contenedor ocupe toda la altura */
+    background-color: whitesmoke; /* Color de fondo */
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 768px) {
+    .table th, .table td {
+        padding: 8px 5px; /* Ajustar espaciado interno */
+        font-size: 14px; /* Ajustar tamaño de fuente */
+    }
+
+    .form-floating {
+        width: 100%; /* Asegura que los inputs ocupen el ancho completo */
+        margin-bottom: 15px; /* Espaciado entre campos */
+    }
+
+    .d-flex {
+        flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+        align-items: center; /* Centrar botones */
+    }
+
+    .btn {
+        width: 100%; /* Botones ocupan el ancho completo */
+        margin: 5px 0; /* Espaciado entre botones */
+    }
+}

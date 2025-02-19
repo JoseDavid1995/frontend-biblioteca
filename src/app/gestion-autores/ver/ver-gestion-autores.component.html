@@ -1,0 +1,38 @@
+<form [formGroup]="autorForm">
+    <div class="container-fluid p-5">
+        <h1 class="mb-4 text-center">Ver Gestión de Autores</h1>
+        
+        <div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="search1" formControlName="nombre">
+                        <label for="search1">Nombre Autor</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-floating">
+                        <input type="date" class="form-control" id="search2" formControlName="fechaNacimiento">
+                        <label for="search2">Fecha de Nacimiento</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-floating">
+                        <select class="form-control" formControlName="nacionalidad">
+                            <option value="0">Seleccione</option>
+                            <option *ngFor="let nationality of nacionalidades" [value]="nationality.id">
+                                {{ nationality.nombreNacionalidad }}
+                            </option>
+                        </select>
+                        <label for="search4">Nacionalidad</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        
+        <div class="d-flex justify-content-center mb-4">
+            <button class="btn btn-danger mx-2" (click)="goListAutores()" >Volver</button>
+        </div>
+    </div>
+</form>

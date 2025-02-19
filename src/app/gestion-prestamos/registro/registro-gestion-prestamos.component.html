@@ -1,0 +1,43 @@
+<div class="container-fluid p-5" >
+    <a href="/inicio" >Volver al Inicio</a>
+
+    <h1 class="mb-4 text-center">Registro de Gesti&oacute;n de Pr&eacute;stamos</h1>
+    <form [formGroup]="prestamoForm">
+        <div >
+            <div class="row">
+                <div class="col">
+                    <div class="form-floating">
+                        <select class="form-control" formControlName="nombreLibro" >
+                            <option value="0">Seleccione</option>
+                            <option *ngFor="let e of libros" [value]="e.id">
+                                {{ e.titulo }}
+                            </option>
+                        </select>
+                        <label for="search1">Libros</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-floating">
+                        <input type="date" class="form-control" id="search2" formControlName="fechaPrestamo">
+                        <label for="search2">Fecha de Pr&eacute;stamo</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-floating">
+                        <input type="date" class="form-control" id="search2" formControlName="fechaDevolucion">
+                        <label for="search2">Fecha de Devoluci&oacute;n</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    
+    <br>
+    
+    <div class="d-flex justify-content-center mb-4">
+        <button class="btn btn-warning mx-2"  (click)="goListPrestamo()">Volver</button>
+        <button class="btn btn-success mx-2" (click)="registrar()" *ngIf="!validations">Guardar</button>
+    </div>
+  
+   
+</div>

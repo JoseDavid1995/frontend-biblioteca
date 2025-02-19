@@ -1,0 +1,86 @@
+   html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.container-fluid {
+    background: url('https://pfst.cf2.poecdn.net/base/image/eb7714321247f666900784f20b6ede2e577a4db90bd4d78f79db1fba9236a926?w=1024&h=768&pmaid=266068018') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.btn {
+    border-radius: 25px;
+    font-size: 18px;
+    padding: 12px 24px;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-weight: bold;
+}
+
+.dropdown-menu {
+    border-radius: 0.5rem;
+    min-width: 10rem;
+}
+
+.dropdown-item {
+    transition: background-color 0.3s;
+}
+
+.dropdown-item:hover {
+    background-color: gray;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .btn {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .dropdown-menu {
+        min-width: 8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .container-fluid {
+        padding: 20px;
+    }
+
+    .btn {
+        width: 100%; /* Full width buttons on smaller screens */
+        margin-bottom: 10px; /* Space between buttons */
+    }
+
+    .dropdown {
+        width: 100%; /* Full width dropdown */
+    }
+
+    .d-flex {
+        flex-direction: column; /* Stack the dropdown and image */
+        align-items: flex-start; /* Align items to the start */
+    }
+}
+
+@media (min-width: 768px) {
+    .gestion-prestamos {
+        white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+    }
+}

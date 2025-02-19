@@ -1,0 +1,80 @@
+.modal {
+  opacity: 0; /* Comenzar con opacidad 0 */
+  transition: opacity 0.4s ease; /* Transiciones suaves */
+}
+
+.modal.show {
+  display: block; /* Mostrar modal */
+  opacity: 1; /* Opacidad completa */
+}
+
+.fade-in {
+  animation: slideIn 0.5s ease forwards; /* Animación de deslizamiento */
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px); /* Comenzar desplazado hacia abajo */
+    opacity: 0; /* Comenzar con opacidad 0 */
+  }
+  to {
+    transform: translateY(0); /* Restablecer la posición */
+    opacity: 1; /* Opacidad completa */
+  }
+}
+
+.modal-content {
+  border-radius: 12px; /* Bordes redondeados */
+  border: 1px solid #e0e0e0; /* Borde ligero */
+}
+
+.modal-header {
+  background-color: #f5c6cb; /* Color de fondo más suave */
+  border-bottom: 1px solid #f1b0b7; /* Línea de separación */
+}
+
+.modal-title {
+  color: #721c24; /* Color del título */
+  font-size: 1.5rem; /* Tamaño de fuente del título */
+  margin: 0; /* Eliminar márgenes */
+  font-weight: 600; /* Peso de fuente más destacado */
+}
+
+.modal-body {
+  font-size: 1.1rem; /* Tamaño de fuente del cuerpo */
+  color: #333; /* Color del texto */
+}
+
+.modal-footer .btn {
+  font-weight: 600; /* Botones más destacados */
+  padding: 0.6rem 1.5rem; /* Espaciado interno en los botones */
+  border-radius: 5px; /* Bordes redondeados en botones */
+}
+
+.btn-danger {
+  background-color: #dc3545; /* Color de fondo del botón de eliminar */
+  border-color: #dc3545; /* Color del borde del botón de eliminar */
+}
+
+.btn-secondary {
+  background-color: #6c757d; /* Color de fondo del botón de cancelar */
+  border-color: #6c757d; /* Color del borde del botón de cancelar */
+}
+
+/* Efecto hover en botones */
+.btn:hover {
+  opacity: 0.9; /* Ligeramente transparente al pasar el cursor */
+}
+
+/* Estilo moderno para el botón de cierre */
+.modern-close {
+  background: transparent; /* Fondo transparente */
+  border: none; /* Sin borde */
+  font-size: 1.5rem; /* Tamaño de fuente más grande */
+  color: #721c24; /* Color del icono */
+  transition: color 0.3s ease; /* Transición suave */
+}
+
+.modern-close:hover {
+  color: #c82333; /* Color al pasar el cursor */
+}

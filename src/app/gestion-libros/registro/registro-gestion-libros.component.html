@@ -1,0 +1,43 @@
+<div class="container-fluid p-5" [formGroup]="libroForm">
+    <h1 class="mb-4 text-center">Registro de Gestión de Libros</h1>
+    
+    <div>
+        <div class="row">
+            <div class="col-12 col-md mb-3">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="search1" formControlName="nombreLibro">
+                    <label for="search1">Nombre del Libro</label>
+                </div>
+            </div>
+            <div class="col-12 col-md mb-3">
+                <div class="form-floating">
+                    <select class="form-control" formControlName="autor">
+                        <option value="0">Seleccione</option>
+                        <option *ngFor="let autor of autores" [value]="autor.id">
+                            {{ autor.nombre }}
+                        </option>
+                    </select>
+                    <label for="search4">Autor</label>
+                </div>
+            </div>
+            <div class="col-12 col-md mb-3">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="search3" formControlName="isbn" readonly>
+                    <label for="search3">ISBN</label>
+                </div>
+            </div>
+            <div class="col-12 col-md mb-3">
+                <div class="form-floating">
+                    <input type="date" class="form-control" id="search2" formControlName="fechaPublicacion">
+                    <label for="search2">Fecha de Publicación</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    
+    <div class="d-flex justify-content-center mb-4">
+        <button class="btn btn-warning mx-2" (click)="goListBooks()">Volver</button>
+        <button class="btn btn-success mx-2" (click)="registrarLibro()" *ngIf="!validations">Guardar</button>
+    </div>
+</div>

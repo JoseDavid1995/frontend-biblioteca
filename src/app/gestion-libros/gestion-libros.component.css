@@ -1,0 +1,168 @@
+a {
+    font-size: 1.1rem; 
+    font-weight: 500;
+    color: #0077b6; 
+    text-decoration: underline;
+    transition: color 0.3s ease, text-decoration 0.3s ease; 
+}
+
+a:hover {
+    color: #e63946;
+    text-decoration: none; 
+}
+
+.form-control {
+    transition: border-color 0.3s, box-shadow 0.3s; 
+}
+
+.form-control:hover {
+    border-color: #0077b6; 
+    box-shadow: 0 0 5px #0077b6; 
+}
+
+.form-control:focus {
+    border-color: #0077b6;
+    box-shadow: 0 0 5px #0077b6; 
+    outline: none; 
+}
+
+h1 {
+    font-size: 2.5rem; 
+    font-weight: 700;
+    color: #343a40;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); 
+    font-family: 'Times New Roman', serif;
+    color: #0077b6; 
+}
+
+.table {
+    margin-top: 20px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background-color: white; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    border: 1px solid #e0e0e0; 
+}
+
+.table th, .table td {
+    text-align: center;
+    padding: 8px 15px; 
+    vertical-align: middle;
+    border: 1px solid #e0e0e0; 
+    font-size: 0.9em; 
+}
+
+.table th {
+    background-color: #0056b3; 
+    color: white; 
+    font-weight: bold; 
+    border-bottom: 2px solid #004494;
+}
+
+.table tbody tr {
+    transition: background-color 0.3s ease; 
+}
+
+.table tbody tr:hover {
+    background-color: #f7f7f7; 
+}
+
+.table tbody tr:nth-child(odd) {
+    background-color: #f9f9f9; 
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #ffffff; 
+}
+
+.table td:last-child {
+    border-right: none; 
+}
+
+.table th:first-child, .table td:first-child {
+    border-left: none; 
+}
+
+.btn {
+    transition: background-color 0.3s ease; 
+    border-radius: 0.3rem; 
+    font-weight: 500; 
+    font-size: 0.9em; 
+}
+
+.btn-info {
+    background-color: #17a2b8; 
+    color: white; 
+}
+
+.btn-info:hover {
+    background-color: #138496;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    color: black;
+}
+
+.btn-warning:hover {
+    background-color: #d39e00;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white; 
+}
+
+.btn-danger:hover {
+    background-color: #c82333; 
+}
+
+html, body {
+    height: 100%;
+    margin: 0; 
+    font-family: 'Arial', sans-serif; 
+}
+
+.container-fluid {
+    height: 100%; 
+    background-color: #f4f4f4; 
+}
+
+.card {
+    border: 1px solid #0077b6; /* Color del borde */
+    border-radius: 0.5rem; /* Esquinas redondeadas */
+    background-color: #eafaff; /* Fondo claro que se adapta al borde */
+    transition: transform 0.2s, box-shadow 0.2s; /* Transición suave */
+    box-shadow: 0 0 20px rgba(0, 119, 182, 0.5), 0 0 40px rgba(0, 119, 182, 0.3); /* Sombra luminosa constante más fuerte */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el cursor */
+    box-shadow: 0 0 30px rgba(0, 119, 182, 0.8), 0 0 60px rgba(0, 119, 182, 0.6); /* Sombra luminosa más intensa al pasar el cursor */
+}
+
+.card-title {
+    color: #0077b6; /* Color del título */
+    font-weight: bold;
+}
+
+.card-text {
+    color: #343a40; /* Color del texto */
+}
+
+.btn-group {
+    display: flex; /* Hacer que el grupo de botones se muestre en línea */
+    flex-direction: row; /* Alinear los botones horizontalmente */
+    gap: 10px; /* Espacio entre los botones */
+}
+
+@media (max-width: 576px) {
+    .btn-group {
+        flex-wrap: wrap; /* Permitir que los botones se ajusten en móviles */
+        justify-content: center; /* Centrar los botones */
+    }
+}
+
