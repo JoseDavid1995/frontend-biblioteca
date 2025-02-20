@@ -1,5 +1,5 @@
 import { CommonModule, DatePipe } from '@angular/common';
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
@@ -8,16 +8,19 @@ import { AutorService } from '../servicios/autor.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { LoadingService } from '../loading.service';
+import { ModalComponent } from '../modal/modal.component';
 
 @Component({
   selector: 'app-gestion-autores',
   standalone: true,
-  imports: [MatTableModule, FormsModule, MatInputModule, CommonModule, HttpClientModule, ReactiveFormsModule ],
+  imports: [MatTableModule, FormsModule, MatInputModule, CommonModule, HttpClientModule, ReactiveFormsModule, ModalComponent ],
   providers: [AutorService, DatePipe], // Esto es opcional si utilizas providedIn: 'root'
   templateUrl: './gestion-autores.component.html',
   styleUrl: './gestion-autores.component.css'
 })
 export class GestionAutoresComponent implements OnInit {
+    @ViewChild(ModalComponent) modal!: ModalComponent; // Create a reference
+  
   displayedColumns: string[] = ['id', 'fechaNacimiento', 'author', 'nacionalidad', 'acciones'];
   dataSource:any = [];
 
@@ -31,6 +34,7 @@ export class GestionAutoresComponent implements OnInit {
   autorForm: FormGroup;
   descripcionNacionalidad: string = '';
   hayRegistros: boolean = true; // Inicialmente supongamos que hay registros
+  selectedAutorId: number = 0;
 
   
 
@@ -256,5 +260,14 @@ eliminar(id: number) {
 
 }
 
+openModal(id: number) {
+  this.selectedAutorId = id;
+  this.modal.openModal();
+}
+
+deleteRecord(id: number) {
+  this.eliminar(id)  
+  console.log('Registro eliminado');
+  }
  
 }

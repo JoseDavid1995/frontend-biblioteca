@@ -130,3 +130,58 @@ html, body {
     height: 100%; /* Asegúrate de que el contenedor ocupe toda la altura */
     background-color: #f4f4f4; /* Color de fondo suave */
 }
+
+@media (max-width: 768px) {
+    .container-fluid {
+        padding: 15px; /* Espacio interior reducido en pantallas pequeñas */
+    }
+
+    h1 {
+        font-size: 2rem; /* Tamaño de fuente más pequeño en pantallas pequeñas */
+    }
+
+    .btn {
+        width: 100%; /* Botones ocupan el ancho completo en pantallas pequeñas */
+        margin-bottom: 10px; /* Espacio entre botones */
+    }
+
+    .form-floating {
+        width: 100%; /* Campos de formulario ocupan el ancho completo */
+    }
+
+    .table th, .table td {
+        font-size: 0.8em; /* Tamaño de fuente más pequeño en la tabla */
+    }
+}
+
+@media (min-width: 769px) {
+    .form-floating {
+        margin-right: 15px; /* Espacio entre inputs en pantallas grandes */
+    }
+}
+
+.card {
+    border: 1px solid #e0e0e0; /* Borde sutil */
+    border-radius: 0.5rem; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.card-title {
+    font-weight: bold; /* Negrita para el título */
+    font-size: 1.25rem; /* Tamaño de fuente más grande */
+}
+
+.card-text {
+    font-size: 0.9em; /* Tamaño de fuente más pequeño */
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .card-deck {
+        flex-direction: column; /* Apilar tarjetas en pantallas pequeñas */
+    }
+}
+
+.btn {
+    margin-left: 10px; /* Margen adicional a la izquierda de los botones */
+}

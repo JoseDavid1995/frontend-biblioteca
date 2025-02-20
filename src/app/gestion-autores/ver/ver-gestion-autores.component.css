@@ -1,10 +1,44 @@
+html, body {
+    height: 100%;
+    margin: 0; /* Elimina el margen predeterminado */
+}
+
+.full-height {
+    height: 100vh; /* Usa el 100% de la altura de la ventana */
+}
+
+.container-fluid {
+    height: 100%; /* Asegúrate de que el contenedor ocupe toda la altura */
+    background-color: whitesmoke; /* Color de fondo */
+    display: flex;
+    flex-direction: column;
+    padding: 20px; /* Espaciado interno */
+}
+
+@media (max-width: 768px) {
+    .container-fluid {
+        padding: 10px; /* Menos padding en pantallas más pequeñas */
+    }
+
+    .form-floating {
+        margin-bottom: 15px; /* Espaciado entre inputs */
+    }
+
+    .table {
+        font-size: 14px; /* Ajusta el tamaño de la fuente en pantallas pequeñas */
+    }
+}
+
 .table {
     margin-top: 20px;
     border-radius: 0.25rem; /* Bordes redondeados */
     overflow: hidden; /* Esconde los bordes */
     background-color: white; /* Fondo blanco para la tabla */
+    width: 100%; /* Asegura que la tabla ocupe el 100% del ancho */
+    max-width: 100%; /* Previene desbordamiento */
 }
 
+/* Resto de estilos para la tabla... */
 .table th, .table td {
     text-align: center;
     padding: 10px 15px; /* Espaciado interno ajustado */
@@ -44,14 +78,4 @@
 
 .table th:first-child, .table td:first-child {
     border-left: none; /* Eliminar borde izquierdo de la primera celda */
-}
-
-html, body {
-    height: 100%;
-    margin: 0; /* Elimina el margen predeterminado */
-}
-
-.container-fluid {
-    height: 100%; /* Asegúrate de que el contenedor ocupe toda la altura */
-    background-color: whitesmoke; /* Color de fondo */
 }

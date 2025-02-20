@@ -55,3 +55,27 @@ html, body {
     height: 100%; /* Asegúrate de que el contenedor ocupe toda la altura */
     background-color: whitesmoke; /* Color de fondo */
 }
+
+/* Responsividad adicional */
+@media (max-width: 768px) {
+    .d-flex {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    }
+}
+
+html, body {
+    height: 100%; /* Asegúrate de que el html y body ocupen toda la altura */
+    margin: 0; /* Elimina el margen predeterminado */
+}
+
+.container-fluid {
+    height: 100vh; /* Asegúrate de que el contenedor ocupe toda la altura de la ventana */
+    background-color: whitesmoke; /* Color de fondo */
+    display: flex; /* Flexbox para centrar el contenido */
+    flex-direction: column; /* Alineación vertical */
+    padding: 20px; /* Espaciado interior */
+}
+
+h1 {
+    margin-bottom: 20px; /* Espaciado adicional para el título */
+}

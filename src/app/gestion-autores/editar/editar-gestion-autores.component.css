@@ -1,57 +1,85 @@
+html, body {
+    height: 100%;
+    margin: 0; 
+}
+
+body {
+    background-color: whitesmoke; /* Color de fondo para todo el cuerpo */
+}
+
+.container-fluid {
+    height: 100%;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    padding: 20px; /* Añadir un poco de padding */
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+}
+
 .table {
     margin-top: 20px;
-    border-radius: 0.25rem; /* Bordes redondeados */
-    overflow: hidden; /* Esconde los bordes */
-    background-color: white; /* Fondo blanco para la tabla */
+    border-radius: 0.25rem;
+    overflow: hidden;
+    background-color: transparent; /* Cambiar a transparente */
 }
 
 .table th, .table td {
     text-align: center;
-    padding: 10px 15px; /* Espaciado interno ajustado */
-    vertical-align: middle; /* Alineación vertical */
+    padding: 10px 15px;
+    vertical-align: middle;
 }
 
 .table th {
-    background-color: #d9534f; /* Color rojo para el encabezado */
-    color: white; /* Color de texto del encabezado */
-    font-weight: bold; /* Negrita para el encabezado */
-    border-bottom: 2px solid #dee2e6; /* Línea de separación más clara */
+    background-color: #d9534f;
+    color: white;
+    font-weight: bold;
+    border-bottom: 2px solid #dee2e6;
 }
 
 .table tbody tr {
-    transition: background-color 0.3s ease; /* Transición suave para el fondo */
+    transition: background-color 0.3s ease;
 }
 
 .table tbody tr:hover {
-    background-color: #e3f2fd; /* Color de fondo ligero al pasar el mouse */
+    background-color: #e3f2fd;
 }
 
 .table tbody tr:nth-child(odd) {
-    background-color: #f9f9f9; /* Color de fondo para filas impares */
+    background-color: #f9f9f9;
 }
 
 .table tbody tr:nth-child(even) {
-    background-color: #ffffff; /* Color de fondo para filas pares */
+    background-color: #ffffff;
 }
 
 .table td {
-    border: 1px solid #dee2e6; /* Borde sutil para las celdas */
+    border: 1px solid #dee2e6;
 }
 
-.table td:last-child {
-    border-right: none; /* Eliminar borde derecho de la última celda */
+.btn {
+    margin-bottom: 1rem; 
 }
 
-.table th:first-child, .table td:first-child {
-    border-left: none; /* Eliminar borde izquierdo de la primera celda */
+@media (min-width: 768px) {
+    .btn {
+        margin-bottom: 0; 
+    }
 }
 
-html, body {
-    height: 100%;
-    margin: 0; /* Elimina el margen predeterminado */
+.d-flex {
+    display: flex; /* Usar flexbox para la alineación */
+    justify-content: center; /* Centra los botones horizontalmente */
+    margin-top: 20px; /* Espacio superior para separación */
 }
 
-.container-fluid {
-    height: 100%; /* Asegúrate de que el contenedor ocupe toda la altura */
-    background-color: whitesmoke; /* Color de fondo */
+.btn {
+    padding: 0.4rem 0.8rem; /* Ajusta el tamaño del padding */
+    font-size: 0.9rem; /* Tamaño de fuente */
+    min-width: 80px; /* Ancho mínimo */
+    max-width: 120px; /* Ancho máximo */
+    text-align: center; /* Centra el texto dentro del botón */
+    border-radius: 0.25rem; /* Bordes redondeados */
+    display: inline-flex; /* Asegura que el botón se comporte como un bloque en línea */
+    align-items: center; /* Centra el contenido del botón verticalmente */
+    margin: 0 10px; /* Espaciado horizontal entre botones */
 }

@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { AutorService } from '../../servicios/autor.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
+import { LoadingService } from '../../loading.service';
 
 @Component({
   selector: 'app-registro-gestion-autores',
@@ -22,7 +23,7 @@ export class RegistroGestionAutoresComponent implements OnInit{
   nacionalidades: any[] = [];
   validations: boolean = false;
 
-  constructor(private router: Router, private fb: FormBuilder, private autorService: AutorService, private toastr: ToastrService) {
+  constructor(private router: Router, private fb: FormBuilder, private autorService: AutorService, private toastr: ToastrService, private loadingService: LoadingService) {
     this.autorForm = this.fb.group({
       nombre: [''],
       fechaNacimiento: [''],
@@ -32,7 +33,12 @@ export class RegistroGestionAutoresComponent implements OnInit{
   }
 
   ngOnInit(): void {
-   this.obtenerNacionalidades();
+
+    this.loadingService.setLoading(true);
+    setTimeout(() => {
+      this.loadingService.setLoading(false);
+      this.obtenerNacionalidades();
+      }, 2000);
 
   }
 
