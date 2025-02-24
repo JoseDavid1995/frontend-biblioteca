@@ -1,0 +1,17 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav
+      #sidenav
+      mode="over"
+      class="sidenav"
+      [style.width]="'250px'">
+      <h2>Opciones</h2>
+      <button mat-button (click)="close(sidenav)">Cerrar</button>
+      <button mat-button>Gestión de Libros</button>
+      <button mat-button>Gestión de Autores</button>
+      <button mat-button>Gestión de Prestamos</button>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <button mat-button (click)="sidenav.open()">Abrir Panel</button>
+      <h1>Seleccione una Opción</h1>
+    </mat-sidenav-content>
+  </mat-sidenav-container>

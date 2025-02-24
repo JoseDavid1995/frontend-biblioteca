@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Observable, of, throwError } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
 
 @Injectable({
@@ -40,4 +40,6 @@ export class AuthService {
     const token = localStorage.getItem('authToken');
     return !!token;
   }
+
+  
 }

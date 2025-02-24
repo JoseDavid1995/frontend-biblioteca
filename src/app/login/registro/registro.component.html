@@ -2,25 +2,25 @@
   <div fxFlex="100%" fxFlex.gt-sm="25%"></div>
   <div fxFlex="100%" fxFlex.gt-sm="25%">
     <div class="login-container">
-      <h2>Iniciar Sesión</h2>
-      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <h2>Registro de Usuario</h2>
+      <form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <mat-form-field appearance="outline">
-            <mat-label>Usuario</mat-label>
+            <mat-label>Ingreasr Usuario</mat-label>
             <input matInput formControlName="username" required>
           </mat-form-field>
         </div>
         <div class="form-group">
           <mat-form-field appearance="outline">
-            <mat-label>Contraseña</mat-label>
+            <mat-label>Ingresar Contraseña</mat-label>
             <input matInput type="password" formControlName="password" required>
           </mat-form-field>
         </div>
-        <button mat-flat-button type="submit" class="login-button">Ingresar</button>
+        <button mat-flat-button type="submit" class="login-button">Grabar</button>
       </form>
       <br>
       <div class="register-link">
-        <p>¿No se encuentra registrado? <a href="/registro">Regístrese</a></p>
+         <a href="/login">Volver</a>
       </div>
     </div>
   </div>

@@ -15,10 +15,12 @@ import { EditarGestionLibrosComponent } from './gestion-libros/editar/editar-ges
 import { VerGestionLibrosComponent } from './gestion-libros/ver/ver-gestion-libros.component';
 import { EditarGestionPrestamosComponent } from './gestion-prestamos/editar/editar-gestion-prestamos.component';
 import { VerGestionPrestamosComponent } from './gestion-prestamos/ver/ver-gestion-prestamos.component';
+import { RegistroComponent } from './login/registro/registro.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' }, // Asegúrate de usar pathMatch
   { path: 'login', component: LoginComponent },
+  { path: 'registro', component: RegistroComponent },
   { path: 'inicio', component: InicioComponent },
   { path: 'gestion-libros', component: GestionLibrosComponent },
   { path: 'gestion-autores', component: GestionAutoresComponent },

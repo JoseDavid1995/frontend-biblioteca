@@ -13,6 +13,6 @@ export const appConfig: ApplicationConfig = {
     provideToastr(), // Toastr providers
 
     HttpClientModule, provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideAnimationsAsync(),
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true }, provideAnimationsAsync(),
   ]
 };
