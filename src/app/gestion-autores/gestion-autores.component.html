@@ -5,19 +5,19 @@
     
     <form [formGroup]="autorForm">
         <div class="row g-3">
-            <div class="col-md-3 col-6">
+            <div class="col-md-4 col-12">
                 <div class="form-floating">
-                    <input type="text" class="form-control" id="search1" formControlName="nombre">
+                    <input type="text" class="form-control" id="search1" formControlName="nombre" placeholder="Nombre Autor">
                     <label for="search1">Nombre Autor</label>
                 </div>
             </div>
-            <div class="col-md-3 col-6">
+            <div class="col-md-4 col-12">
                 <div class="form-floating">
                     <input type="date" class="form-control" id="search2" formControlName="fechaNacimiento">
                     <label for="search2">Fecha de Nacimiento</label>
                 </div>
             </div>
-            <div class="col-md-3 col-6">
+            <div class="col-md-4 col-12">
                 <div class="form-floating">
                     <select class="form-control" formControlName="nacionalidad">
                         <option value="0">Seleccione</option>
@@ -26,17 +26,6 @@
                         </option>
                     </select>
                     <label for="search4">Nacionalidad</label>
-                </div>
-            </div>
-            <div class="col-md-3 col-6">
-                <div class="form-floating">
-                    <select class="form-control" formControlName="estado">
-                        <option value="0">Seleccione</option>
-                        <option *ngFor="let e of estado" [value]="e.codigo">
-                            {{ e.nombreEstado }}
-                        </option>
-                    </select>
-                    <label for="search4">Estado</label>
                 </div>
             </div>
         </div>

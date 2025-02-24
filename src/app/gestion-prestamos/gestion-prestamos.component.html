@@ -6,7 +6,7 @@
     <form [formGroup]="prestamoForm">
         <div >
             <div class="row">
-                <div class="col">
+                <div class="col-12 col-md-4 mb-3">
                     <div class="form-floating">
                         <select class="form-control" formControlName="nombreLibro" >
                             <option value="0">Seleccione</option>
@@ -17,13 +17,13 @@
                         <label for="search1">Libros</label>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-12 col-md-4 mb-3">
                     <div class="form-floating">
                         <input type="date" class="form-control" id="search2" formControlName="fechaPrestamo">
                         <label for="search2">Fecha de Pr&eacute;stamo</label>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-12 col-md-4 mb-3">
                     <div class="form-floating">
                         <input type="date" class="form-control" id="search2" formControlName="fechaDevolucion">
                         <label for="search2">Fecha de Devoluci&oacute;n</label>
@@ -35,47 +35,91 @@
     
     <br>
     
-    <div class="d-flex justify-content-center mb-4">
-        <button class="btn btn-danger mx-2" (click)="clearSearch()">Limpiar</button>
-        <button class="btn btn-warning mx-2" (click)="buscar()">Buscar</button>
-        <button class="btn btn-success mx-2" (click)="goRegistroPrestamos()">Nuevo Registro</button>
+    <div class="d-flex justify-content-center mb-4 flex-wrap">
+        <div class="btn-group" role="group">
+        <button class="btn btn-danger" (click)="clearSearch()">Limpiar</button>
+        <button class="btn btn-warning" (click)="buscar()">Buscar</button>
+        <button class="btn btn-success" (click)="goRegistroPrestamos()">Nuevo Registro</button>
+        </div>
+        
     </div>
-  
-    <table class="table table-striped table-bordered table-hover">
-        <thead class="thead-light">
-            <tr>
+    
+     <!-- Tarjetas para móviles -->
+     <div class="d-block d-md-none">
+        <div class="row">
+            <div *ngIf="!hayRegistros" class="col-12">
+                <div class="alert alert-warning text-center" role="alert">
+                    No se encontraron registros
+                </div>
+            </div>
+            <div *ngFor="let book of paginatedData" class="col-12 mb-3">
+                <div class="card border-primary shadow-sm card-luminous"> <!-- Clase adicional para efecto luminoso -->
+                    <div class="card-body">
+                        <h5 class="card-title">{{ book.libro }}</h5>
+                        <p class="card-text">ID: <strong>{{ book.id }}</strong></p>
+                        <p class="card-text">Fecha de Pr&eacute;stamo: <strong>{{ book.fechaPrestamo }}</strong></p>
+                        <p class="card-text">Fecha de Devoluci&oacute;n: <strong>{{ book.fechaDevolucion }}</strong></p>
+                        <p class="card-text">Estado: <strong>{{ book.estado }}</strong></p>
+                        <div class="text-center">
+                            <button class="btn btn-info btn-sm" title="Ver" (click)="ver(book.id)">
+                                <i class="bi bi-eye"></i>
+                            </button>
+                            <button class="btn btn-warning btn-sm" title="Editar" (click)="editar(book.id)">
+                                <i class="bi bi-pencil"></i>
+                            </button>
+                            <button class="btn btn-danger btn-sm" title="Eliminar" (click)="openModal(book.id)">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-                <th (click)="sortData('id')">ID <i [ngClass]="getSortIcon('id')"></i></th>
-                <th (click)="sortData('title')">Libro <i [ngClass]="getSortIcon('title')"></i></th>
-                <th (click)="sortData('author')">Fecha de Pr&eacute;stamo <i [ngClass]="getSortIcon('author')"></i></th>
-                <th (click)="sortData('fechaPublicacion')">Fecha de Devoluci&oacute;n <i [ngClass]="getSortIcon('fechaPublicacion')"></i></th>
-                <th (click)="sortData('estado')">Estado <i [ngClass]="getSortIcon('estado')"></i></th>
-                <th>Acciones</th>
+    <!-- Tabla para pantallas más grandes -->
 
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let book of paginatedData">
-                <td>{{ book.id }}</td>
-                <td>{{ book.libro }}</td>
-                <td>{{ book.fechaPrestamo }}</td>
-                <td>{{ book.fechaDevolucion }}</td>
-                <td>{{ book.estado }}</td>
-                <td>
-                    <button class="btn btn-info btn-sm"  title="Ver" (click)="ver(book.id)">
-                        <i class="bi bi-eye"></i>
-                    </button>
-                    <button class="btn btn-warning btn-sm"  title="Editar" (click)="editar(book.id)">
-                        <i class="bi bi-pencil"></i>
-                    </button>
-                    <button class="btn btn-danger btn-sm"  title="Eliminar" (click)="openModal(book.id)" >
-                        <i class="bi bi-trash" ></i>
-                    </button>
-                
-            </td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="d-none d-md-block">
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover">
+                <thead class="thead-light">
+                    <tr>
+        
+                        <th (click)="sortData('id')">ID <i [ngClass]="getSortIcon('id')"></i></th>
+                        <th (click)="sortData('title')">Libro <i [ngClass]="getSortIcon('title')"></i></th>
+                        <th (click)="sortData('author')">Fecha de Pr&eacute;stamo <i [ngClass]="getSortIcon('author')"></i></th>
+                        <th (click)="sortData('fechaPublicacion')">Fecha de Devoluci&oacute;n <i [ngClass]="getSortIcon('fechaPublicacion')"></i></th>
+                        <th (click)="sortData('estado')">Estado <i [ngClass]="getSortIcon('estado')"></i></th>
+                        <th>Acciones</th>
+        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let book of paginatedData">
+                        <td>{{ book.id }}</td>
+                        <td>{{ book.libro }}</td>
+                        <td>{{ book.fechaPrestamo }}</td>
+                        <td>{{ book.fechaDevolucion }}</td>
+                        <td>{{ book.estado }}</td>
+                        <td>
+                            <button class="btn btn-info btn-sm"  title="Ver" (click)="ver(book.id)">
+                                <i class="bi bi-eye"></i>
+                            </button>
+                            <button class="btn btn-warning btn-sm"  title="Editar" (click)="editar(book.id)">
+                                <i class="bi bi-pencil"></i>
+                            </button>
+                            <button class="btn btn-danger btn-sm"  title="Eliminar" (click)="openModal(book.id)" >
+                                <i class="bi bi-trash" ></i>
+                            </button>
+                        
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    
     <app-modal #confirmDeleteModal (deleteConfirmed)="deleteRecord(selectedPrestamoId)"></app-modal>
 
     <div class="d-flex justify-content-center align-items-center mt-3">

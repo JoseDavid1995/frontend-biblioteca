@@ -1,3 +1,9 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
 a {
     font-size: 1.1rem; /* Tamaño de fuente ligeramente mayor */
     font-weight: 500; /* Peso de fuente medio */
@@ -40,11 +46,11 @@ h1 {
 
 .table {
     margin-top: 20px;
-    border-radius: 0.5rem; /* Bordes redondeados */
-    overflow: hidden; /* Esconde los bordes */
-    background-color: white; /* Fondo blanco para la tabla */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-    border: 1px solid #e0e0e0; /* Borde sutil alrededor de la tabla */
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
 }
 
 .table th, .table td {
@@ -87,38 +93,36 @@ h1 {
 }
 
 .btn {
-    transition: background-color 0.3s ease; /* Transición suave para botones */
-    border-radius: 0.3rem; /* Bordes redondeados para botones */
-    font-weight: 500; /* Peso de fuente del botón */
-    font-size: 0.9em; /* Tamaño de fuente de los botones */
+    transition: background-color 0.3s ease; 
+    border-radius: 0.3rem; 
+    font-weight: 500; 
+    font-size: 0.9em; 
 }
 
 .btn-info {
-    background-color: #17a2b8; /* Color de fondo */
-    color: white; /* Color de texto */
+    background-color: #17a2b8; 
+    color: white; 
 }
 
 .btn-info:hover {
-    background-color: #138496; /* Color de fondo en hover */
+    background-color: #138496;
 }
 
 .btn-warning {
-    background-color: #ffc107; /* Color de fondo */
-    color: black; /* Color de texto */
+    background-color: #ffc107;
+    color: black;
 }
 
-.btn-warning:hover {
-    background-color: #d39e00; /* Color de fondo en hover */
-}
 
 .btn-danger {
-    background-color: #dc3545; /* Color de fondo */
-    color: white; /* Color de texto */
+    background-color: #dc3545;
+    color: white; 
 }
 
 .btn-danger:hover {
-    background-color: #c82333; /* Color de fondo en hover */
+    background-color: #c82333; 
 }
+
 
 html, body {
     height: 100%;
@@ -127,6 +131,87 @@ html, body {
 }
 
 .container-fluid {
-    height: 100%; /* Asegúrate de que el contenedor ocupe toda la altura */
-    background-color: #f4f4f4; /* Color de fondo suave */
+    height: 100%;
+    background-color: #f4f4f4;
+}
+
+@media (max-width: 768px) {
+    .table {
+        display: block;
+        width: 100%;
+    }
+
+    .table thead {
+        display: none; /* Oculta el encabezado de la tabla */
+    }
+
+    .table tbody tr {
+        display: block; /* Cada fila se convierte en un bloque */
+        margin-bottom: 15px; /* Espacio entre tarjetas */
+        background-color: white; /* Fondo blanco para las tarjetas */
+        border-radius: 0.5rem; /* Bordes redondeados */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para las tarjetas */
+    }
+
+    .table tbody tr td {
+        display: flex; /* Usa flexbox para alinear contenidos */
+        justify-content: space-between; /* Espaciado entre elementos */
+        padding: 10px; /* Espaciado interno */
+        border: none; /* Sin borde */
+    }
+
+    .table tbody tr td:last-child {
+        display: flex;
+        justify-content: flex-end; /* Alinea los botones a la derecha */
+    }
+}
+
+.table th, .table td {
+    text-align: center;
+    padding: 8px 15px;
+    vertical-align: middle;
+    border: 1px solid #e0e0e0;
+    font-size: 0.9em;
+}
+
+.table th {
+    background-color: #0056b3;
+    color: white;
+    font-weight: bold;
+    border-bottom: 2px solid #004494;
+}
+
+.btn-group {
+    display: flex; /* Hacer que el grupo de botones se muestre en línea */
+    flex-direction: row; /* Alinear los botones horizontalmente */
+    gap: 10px; /* Espacio entre los botones */
+}
+
+@media (max-width: 576px) {
+    .btn-group {
+        flex-wrap: wrap; /* Permitir que los botones se ajusten en móviles */
+        justify-content: center; /* Centrar los botones */
+    }
+}
+
+.card {
+    border: 1px solid #0077b6; /* Color del borde */
+    border-radius: 0.5rem; /* Esquinas redondeadas */
+    background-color: #eafaff; /* Fondo claro que se adapta al borde */
+    transition: transform 0.2s, box-shadow 0.2s; /* Transición suave */
+    box-shadow: 0 0 20px rgba(0, 119, 182, 0.5), 0 0 40px rgba(0, 119, 182, 0.3); /* Sombra luminosa constante más fuerte */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el cursor */
+    box-shadow: 0 0 30px rgba(0, 119, 182, 0.8), 0 0 60px rgba(0, 119, 182, 0.6); /* Sombra luminosa más intensa al pasar el cursor */
+}
+
+.card-title {
+    color: #0077b6; /* Color del título */
+    font-weight: bold;
+}
+
+.card-text {
+    color: #343a40; /* Color del texto */
 }
